@@ -1,0 +1,230 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    background-size: cover;
+}
+
+/* Glass Container */
+.app-container {
+    width: 90%;
+    max-width: 650px;
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+    color: #fff;
+}
+
+/* Header */
+.app-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.app-header p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Search */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: #00c6ff;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* Current Weather Card */
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Icon */
+.icon img {
+    width: 90px;
+}
+
+/* Info */
+.info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+#temperature {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+/* ⭐ FORECAST FIX — ONE ROW */
+.forecast {
+    display: flex;
+    flex-wrap: nowrap;      
+    overflow-x: auto;       
+    gap: 10px;
+}
+
+/* Scrollbar styling */
+.forecast::-webkit-scrollbar {
+    display: none;
+}
+
+.forecast::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* Each Day Card */
+.day {
+    flex: 0 0 100px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.day:hover {
+    transform: translateY(-5px);
+}
+
+/* Weekday */
+.weekday {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Forecast Icon */
+.day .icon img {
+    width: 45px;
+}
+
+/* Temp */
+.temp {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+body.clear {
+    background-image: url(https://tse3.mm.bing.net/th/id/OIP.pL6etCvR1ubtjEfP3mljywHaEK?rs=1&pid=ImgDetMain&o=7&rm=3);
+}
+body.clouds {
+    background-image: url(https://cdn.pixabay.com/photo/2016/05/01/17/32/sky-1365325_1280.jpg);
+}
+body.rain {
+    background-image: url(https://tse1.mm.bing.net/th/id/OIP.jFy1MBA14al4kJHziW24PwHaEJ?w=1749&h=980&rs=1&pid=ImgDetMain&o=7&rm=3);
+}
+body.snow {
+    background-image: url(https://tse3.mm.bing.net/th/id/OIP.Oq9gk2_zg_bMRR6Ap0WLKAHaMG?rs=1&pid=ImgDetMain&o=7&rm=3);
+}
+body.default {
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/044/529/516/small_2x/ai-generated-dark-stormy-sky-with-clouds-generative-ai-photo.jpeg);
+}
+body {
+    background-image: url(https://tse2.mm.bing.net/th/id/OIP.ypSxTsa4AflQg5GWDBrhRQHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3);
+}
+
+/* Error */
+.error-message {
+    background: rgba(255,0,0,0.6);
+    padding: 12px;
+    border-radius: 10px;
+    display: none;
+    margin-bottom: 15px;
+}
+
+/* Loading */
+.loading {
+    display: none;
+    margin: 20px 0;
+}
+
+/* Spinner */
+.loading::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .current-weather {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .app-header h1 {
+        font-size: 1.8rem;
+    }
+}
+/* Watermark */
+.watermark {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+}
